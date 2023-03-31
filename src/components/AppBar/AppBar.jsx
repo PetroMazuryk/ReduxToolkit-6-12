@@ -1,13 +1,13 @@
-// import { Button } from 'components/Button/Button';
+import { Button } from 'components/Button/Button';
 import { StatusFilter } from 'components/StatusFilter/StatusFilter';
 import { TaskCounter } from 'components/TaskCounter/TaskCounter';
 import css from './AppBar.module.css';
 
-// import { useDispatch } from 'react-redux';
-// import { DeleteAllCompleted } from 'redux/actions';
+import { useDispatch } from 'react-redux';
+import { deleteAllCompleted } from 'redux/tasksSlice';
 
 export const AppBar = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   return (
     <header className={css.wrapper}>
       <section className={css.section}>
@@ -16,9 +16,9 @@ export const AppBar = () => {
       </section>
       <section className={css.section}>
         <h2 className={css.title}>Some title</h2>
-        {/* <Button onClick={() => dispatch(DeleteAllCompleted())}>
+        <Button onClick={() => dispatch(deleteAllCompleted())}>
           Delete completed
-        </Button> */}
+        </Button>
       </section>
       <section className={css.section}>
         <h2 className={css.title}>Filter by status</h2>

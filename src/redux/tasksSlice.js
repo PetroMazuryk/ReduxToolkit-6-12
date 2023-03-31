@@ -38,8 +38,12 @@ const tasksSlice = createSlice({
         }
       }
     },
+    deleteAllCompleted(state) {
+      return state.filter(task => !task.completed);
+    },
   },
 });
 
-export const { addTask, deleteTask, toggleCompleted } = tasksSlice.actions;
+export const { addTask, deleteTask, toggleCompleted, deleteAllCompleted } =
+  tasksSlice.actions;
 export const tasksReducer = tasksSlice.reducer;
