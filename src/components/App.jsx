@@ -1,16 +1,14 @@
-import { AppBar } from './AppBar/AppBar';
+import { Routes, Route } from 'react-router-dom';
+
 import { Layout } from './Layout/Layout';
-import { TaskForm } from './TaskForm/TaskForm';
-import { TaskList } from './TaskList/TaskList';
-import { Section } from './Section/Section';
+import { LoginPage, DashboardPage } from 'pages';
 
 export const App = () => {
   return (
-    <Layout>
-      <AppBar />
-      <TaskForm />
-      <TaskList />
-      <Section title="New Layout / Slice Layout"></Section>
-    </Layout>
+    <Routes>
+      <Route path="/" element={<Layout />}></Route>
+      <Route path="login" element={<LoginPage />}></Route>
+      <Route path="dashboard" element={<DashboardPage />}></Route>
+    </Routes>
   );
 };

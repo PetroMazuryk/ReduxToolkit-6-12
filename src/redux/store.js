@@ -1,17 +1,16 @@
-// import { createStore } from 'redux';
-// import { devToolsEnhancer } from '@redux-devtools/extension';
-// import { rootReducer } from './reducer';
-
-// const enhancer = devToolsEnhancer();
-// export const store = createStore(rootReducer, enhancer);
-
 import { configureStore } from '@reduxjs/toolkit';
 import { tasksReducer } from './tasksSlice';
 import { filtersReducer } from './filtersSlice';
+import { myValueSlice } from './myValue';
+import { itemsSlice } from './myItem';
+import { userSlice } from './userSlice';
 
 export const store = configureStore({
   reducer: {
     tasks: tasksReducer,
     filters: filtersReducer,
+    myValue: myValueSlice.reducer,
+    items: itemsSlice.reducer,
+    user: userSlice.reducer,
   },
 });
