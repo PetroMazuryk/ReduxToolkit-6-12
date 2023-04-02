@@ -7,12 +7,21 @@ import { CounterValue } from 'components/CounterValue/CounterValue';
 import { useSelector } from 'react-redux';
 import { UserMenu } from 'components/UserMenu';
 import { ClicksValue } from 'components/clicksValue';
+import { Section } from 'components/Section/Section';
 
 export const Layout = () => {
   const isLoggetIn = useSelector(state => state.user.isLoggedIn);
   return (
     <main className={css.container}>
-      <nav style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+      <nav
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          fontSize: 22,
+          borderBottom: 'solid',
+          paddingBottom: 8,
+        }}
+      >
         {!isLoggetIn && <Link to="/login">Log in</Link>}
         {isLoggetIn && <Link to="/dashboard">Dashboard</Link>}
 
@@ -23,10 +32,12 @@ export const Layout = () => {
         <AppBar />
         <TaskForm />
         <TaskList />
-
-        <CounterValue />
-
-        <ClicksValue />
+        <Section>
+          <CounterValue />
+        </Section>
+        <Section>
+          <ClicksValue />
+        </Section>
       </div>
     </main>
   );

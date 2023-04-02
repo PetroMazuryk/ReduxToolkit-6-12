@@ -7,7 +7,7 @@ export const Heading = styled.h2`
 `;
 
 export const Wrapper = styled.section`
-  width: 500px;
+  width: 800px;
   margin: 0 auto;
 
   outline: 1px solid;

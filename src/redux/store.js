@@ -6,6 +6,17 @@ import { itemsSlice } from './myItem';
 import { userSlice } from './userSlice';
 import { clicksSlice } from './clicksSlice';
 
+import { clicksReducer } from './clicksSlice';
+import {
+  persistStore,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
+
 export const store = configureStore({
   reducer: {
     tasks: tasksReducer,
@@ -13,6 +24,16 @@ export const store = configureStore({
     myValue: myValueSlice.reducer,
     items: itemsSlice.reducer,
     user: userSlice.reducer,
-    clicks: clicksSlice.reducer,
+    clicksValue: clicksSlice.reducer,
+
+    clicks: clicksReducer,
   },
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
+
+export const persistor = persistStore(store);
