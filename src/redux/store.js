@@ -4,6 +4,7 @@ import { filtersReducer } from './filtersSlice';
 import { myValueSlice } from './myValue';
 import { itemsSlice } from './myItem';
 import { userSlice } from './userSlice';
+import { clicksSlice } from './clicksSlice';
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
     myValue: myValueSlice.reducer,
     items: itemsSlice.reducer,
     user: userSlice.reducer,
+    clicks: clicksSlice.reducer,
   },
 });

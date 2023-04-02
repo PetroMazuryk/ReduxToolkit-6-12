@@ -6,6 +6,8 @@ import { AppBar } from 'components/AppBar/AppBar';
 import { CounterValue } from 'components/CounterValue/CounterValue';
 import { useSelector } from 'react-redux';
 import { UserMenu } from 'components/UserMenu';
+import { ClicksValue } from 'components/clicksValue';
+
 export const Layout = () => {
   const isLoggetIn = useSelector(state => state.user.isLoggedIn);
   return (
@@ -23,6 +25,8 @@ export const Layout = () => {
         <TaskList />
 
         <CounterValue />
+
+        <ClicksValue />
       </div>
     </main>
   );

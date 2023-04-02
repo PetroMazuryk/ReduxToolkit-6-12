@@ -7,4 +7,5 @@ export const Counter = styled.div`
   border: 1px solid;
   padding: 10px;
   font-size: 20px;
+  margin-bottom: 8px;
 `;
